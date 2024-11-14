@@ -4,16 +4,19 @@ import Wheel from './Wheel.js';
 
 // TODO: The Motorbike class should extend the Vehicle class
 class Motorbike extends Vehicle {
+  static wheelelie(make: any, model: any) {
+    throw new Error("Method not implemented.");
+  }
   vin : string;
   color: string;
   make: string;
   model:string;
   year: number;
   weight: number;
-  topspeed: number;
+  topSpeed: number;
   wheels: Wheel[];
 
-  constructor(vin : string, color: string, make: string, model:string, year: number, weight: number, topspeed: number, wheels: Wheel[]) {
+  constructor(vin : string, color: string, make: string, model:string, year: number, weight: number, topSpeed: number, wheels: Wheel[]) {
     super();
     this.vin = vin;
     this.color = color;
@@ -21,7 +24,7 @@ class Motorbike extends Vehicle {
     this.model = model;
     this.year = year;
     this.weight = weight;
-    this.topspeed = topspeed;
+    this.topSpeed = topSpeed;
     if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel()];
     } else {
@@ -29,10 +32,10 @@ class Motorbike extends Vehicle {
     }
   }
   wheelelie(make:string, model:string): void {
-    console.log(`Motorbike ${make}  ${model} is doing a wheelie!`)
+    console.log(`Motorbike ${this.make}  ${this.model} is doing a wheelie!`)
   }
 
-  override printDetails() void : {
+  override printDetails(): void  {
     super.printDetails();
 
     console.log(`VIN: ${this.vin}`);
@@ -42,7 +45,12 @@ class Motorbike extends Vehicle {
     console.log(`Year: ${this.year}`);
     console.log(`Weight: ${this.weight} lbs`);
     console.log(`Top Speed: ${this.topSpeed} mph`);
-    console.log(`Wheel: ${this.wheels} `);
+    console.log(
+      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+    );
   }
 }
 
