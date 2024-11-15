@@ -5,14 +5,15 @@
     
 
     ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
+    1. [Installation](#installation)
+    2. [Usage](#usage)
+    3. [License](#license)
+    4. [Contributing](#contributing)
+    5. [Tests](#tests)
+    6. [Questions](#questions)
 
-    ## Installation <a name="Installation"></a>
+    <div id="Installation"/>
+    ## Installation 
     npm install, npm install inquiry, npm run build
 
     ## Usage
