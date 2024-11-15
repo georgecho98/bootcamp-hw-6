@@ -405,7 +405,7 @@ class Cli {
 
         } else if (answers.action === 'wheelie' && answers.vehicleToTow instanceof Motorbike) {
           Motorbike.wheelie(answers.vehicleToTow.make, answers.vehicleToTow.model);
-          return;
+          
         }
         
         // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. 
