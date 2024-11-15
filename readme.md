@@ -12,7 +12,7 @@
 5. [Tests](#tests)
 6. [Questions](#questions)
 
-<div id="Installation"/>
+
 ## Installation 
     npm install, npm install inquiry, npm run build
 
@@ -26,7 +26,7 @@
     Any teammates in the team
 
 ## Tests
-    node index.js and check the readme file content
+    npm run test
 
 ## Questions
     
