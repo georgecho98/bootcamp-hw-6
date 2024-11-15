@@ -4,9 +4,10 @@ import Wheel from './Wheel.js';
 
 // TODO: The Motorbike class should extend the Vehicle class
 class Motorbike extends Vehicle {
-  static wheelelie(make: any, model: any) {
+  static wheelie(make: any, model: any) {
     throw new Error("Method not implemented.");
   }
+  
   vin : string;
   color: string;
   make: string;
@@ -31,7 +32,7 @@ class Motorbike extends Vehicle {
       this.wheels = wheels;
     }
   }
-  wheelelie(make:string, model:string): void {
+  wheelie(make:string, model:string): void {
     console.log(`Motorbike ${this.make}  ${this.model} is doing a wheelie!`)
   }
 

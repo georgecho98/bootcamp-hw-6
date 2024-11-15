@@ -14,11 +14,12 @@ class Truck extends Vehicle implements AbleToTow {
   year: number;
   weight: number;
   topSpeed: number;
-  towingCapacity : number;
   wheels: Wheel[];
+  towingCapacity : number;
+
 
   
-  constructor (vin:string , color:string, make :string, model:string, year:number, weight:number,topSpeed:number, towingCapacity :number, wheels: Wheel[] ) {
+  constructor (vin:string , color:string, make :string, model:string, year:number, weight:number,topSpeed:number, wheels: Wheel[] , towingCapacity :number) {
     super();  
   this.vin= vin;
   this.color = color;
@@ -27,12 +28,13 @@ class Truck extends Vehicle implements AbleToTow {
   this.year = year;
   this.weight = weight;
   this.topSpeed = topSpeed;
-  this.towingCapacity = towingCapacity;
+
   if (wheels.length !== 4) {
     this.wheels = [new Wheel(), new Wheel() , new Wheel(), new Wheel()];
   } else {
     this.wheels = wheels;
   }
+  this.towingCapacity = towingCapacity;
 }
 
   // TODO: Declare properties of the Truck class
@@ -47,13 +49,11 @@ class Truck extends Vehicle implements AbleToTow {
   // TODO: Implement the tow method from the AbleToTow interface
 
   tow(vehicle: Truck | Motorbike | Car): void {
-    
-    this.make;  
-    this.model;
+
     if (this.weight <= this.towingCapacity) {
-        console.log("The vehicle is being towed"); }
+        console.log(`${vehicle.make} ${vehicle.model} is being towed.`); }
       else {
-        console.log("The vehicle is too heavey to be towed");}
+        console.log(`${vehicle.make} ${vehicle.model} is too heavy to be towed.`);}
         // TODO: Get the make an model of the vehicle if it exists
     // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
     // TODO: If it is, log that the vehicle is being towed
@@ -71,19 +71,9 @@ class Truck extends Vehicle implements AbleToTow {
     console.log(`Weight: ${this.weight} lbs`);
     console.log(`Top Speed: ${this.topSpeed} mph`);
     console.log(`Towing Capacity: ${this.towingCapacity} `);
-    console.log(
-      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
-    );
-   
+    this.wheels.forEach((wheel, index) => {
+      console.log(`Wheel ${index + 1}: ${wheel.getDiameter} inch with a ${wheel.getTireBrand} tire`);
+  })
   };
 
   // TODO: Override the printDetails method from the Vehicle class
